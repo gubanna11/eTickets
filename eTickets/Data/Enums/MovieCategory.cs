@@ -10,6 +10,8 @@ namespace eTickets.Data
         Action = 1,
         Comedy,
         Drama,
-        DOcumentory
+        Documentary,
+        Cartoon,
+        Horror
     }
 }
