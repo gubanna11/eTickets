@@ -16,7 +16,10 @@
                     <th>Order ID</th>
                     <th>Orders</th>
                     <th>Total</th>
-                    <th>User</th>
+                    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                    {
+                        <th>User</th>
+                    }
                 </tr>
             </thead>
             <tbody>
@@ -25,7 +28,6 @@
                     <tr>
                         <td class="align-middle">@order.Id</td>
                         <td class="align-middle">
-                            @*colspan="@order.OrderItems.Count"*@
                             <ul style="list-style-type:none">
                                 @foreach (var item in order.OrderItems)
                                 {
@@ -38,13 +40,16 @@
                             </ul>
                         </td>
                         <td class="align-middle">
-                            @string.Format(new CultureInfo("En-us"), "{0:C}", order.OrderItems.Select(m => m.Movie.Price * m.Amount).Sum())
+                            @order.OrderItems.Select(m => m.Movie.Price * m.Amount).Sum().ToString("c")
                         </td>
-                        <td class="align-middle">
-                            -
-                        </td>
+                        @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+                        {
+                            <td class="align-middle">
+                                @order.User.FullName
+                            </td>
+                        }
                     </tr>
-                 }
+                }
             </tbody>
         </table>
     </div>
