@@ -47,15 +47,18 @@
                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit"> <i class="bi bi-search"></i> </button>
                     </form>
 
-                    <ul class="navbar-nav">
-                        @await Component.InvokeAsync("ShoppingCartSummary")
-                    </ul>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <ul class="navbar-nav">
+                            @await Component.InvokeAsync("ShoppingCartSummary")
+                        </ul>
+                    }
 
-                   @*@await @Html.RenderPartialAsync("_Identity")*@
+                        @*@await @Html.RenderPartialAsync("_Identity")*@
 
-                   <partial name="_Identity.cshtml" />
+                        <partial name="_Identity.cshtml" />
 
-                </div>
+                    </div>
             </div>
         </nav>
     </header>
