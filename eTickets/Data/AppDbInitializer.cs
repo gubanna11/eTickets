@@ -67,32 +67,37 @@ namespace eTickets.Data
                     {
                         new Actor()
                         {
-                            FullName = "Actor 1",
+                            Name = "Actor",
+                            Surname = "1",
                             Bio = "This is the Bio of the first actor",
                             ProfilePictureURL = "http://dotnethow.net/images/actors/actor-1.jpeg"
 
                         },
                         new Actor()
                         {
-                            FullName = "Actor 2",
+                            Name = "Actor",
+                            Surname = "2",
                             Bio = "This is the Bio of the second actor",
                             ProfilePictureURL = "http://dotnethow.net/images/actors/actor-2.jpeg"
                         },
                         new Actor()
                         {
-                            FullName = "Actor 3",
+                            Name = "Actor",
+                            Surname = "3",
                             Bio = "This is the Bio of the second actor",
                             ProfilePictureURL = "http://dotnethow.net/images/actors/actor-3.jpeg"
                         },
                         new Actor()
                         {
-                            FullName = "Actor 4",
+                            Name = "Actor",
+                            Surname = "3",
                             Bio = "This is the Bio of the second actor",
                             ProfilePictureURL = "http://dotnethow.net/images/actors/actor-4.jpeg"
                         },
                         new Actor()
                         {
-                            FullName = "Actor 5",
+                            Name = "Actor",
+                            Surname = "5",
                             Bio = "This is the Bio of the second actor",
                             ProfilePictureURL = "http://dotnethow.net/images/actors/actor-5.jpeg"
                         }
@@ -107,32 +112,37 @@ namespace eTickets.Data
                     {
                         new Producer()
                         {
-                            FullName = "Producer 1",
+                            Name = "Producer",
+                            Surname = "1",
                             Bio = "This is the Bio of the first actor",
                             ProfilePictureURL = "http://dotnethow.net/images/producers/producer-1.jpeg"
 
                         },
                         new Producer()
                         {
-                            FullName = "Producer 2",
+                            Name = "Producer",
+                            Surname = "2",
                             Bio = "This is the Bio of the second actor",
                             ProfilePictureURL = "http://dotnethow.net/images/producers/producer-2.jpeg"
                         },
                         new Producer()
                         {
-                            FullName = "Producer 3",
+                            Name = "Producer",
+                            Surname = "3",
                             Bio = "This is the Bio of the second actor",
                             ProfilePictureURL = "http://dotnethow.net/images/producers/producer-3.jpeg"
                         },
                         new Producer()
                         {
-                            FullName = "Producer 4",
+                            Name = "Producer",
+                            Surname = "4",
                             Bio = "This is the Bio of the second actor",
                             ProfilePictureURL = "http://dotnethow.net/images/producers/producer-4.jpeg"
                         },
                         new Producer()
                         {
-                            FullName = "Producer 5",
+                            Name = "Producer",
+                            Surname = "5",
                             Bio = "This is the Bio of the second actor",
                             ProfilePictureURL = "http://dotnethow.net/images/producers/producer-5.jpeg"
                         }
@@ -359,7 +369,6 @@ namespace eTickets.Data
                     await userManager.CreateAsync(newAdminUser, "Coding@1234?");
                     await userManager.AddToRoleAsync(newAdminUser, UserRoles.Admin);
                 }
-
 
 
                 var appUserEmail = "user@etickets.com";

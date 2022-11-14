@@ -57,7 +57,7 @@ namespace eTickets
             });
 
             services.AddSession();
-
+            
             services.AddControllersWithViews();
         }
 

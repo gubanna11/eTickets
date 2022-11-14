@@ -17,10 +17,17 @@ namespace eTickets.Models
         public string ProfilePictureURL { get; set; }
 
 
-        [Display(Name = "Full Name")]
-        [Required(ErrorMessage = "Full Name is required")]
-        [StringLength(50, MinimumLength = 3, ErrorMessage = "Full Name must be between 3 and 50 chars")]
-        public string FullName { get; set; }
+        [Display(Name = "Name")]
+        [Required(ErrorMessage = "Name is required")]
+        [StringLength(20, MinimumLength = 3, ErrorMessage = "Name must be between 3 and 20 chars")]
+        public string Name { get; set; }
+
+
+        [Display(Name = "Surname")]
+        [Required(ErrorMessage = "Surname is required")]
+        [StringLength(25, MinimumLength = 1, ErrorMessage = "Surname must be between 1 and 25 chars")]
+        public string Surname { get; set; }
+
 
         [Display(Name = "Biography")]
         [Required(ErrorMessage = "Biography is required")]
