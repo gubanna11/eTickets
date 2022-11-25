@@ -361,7 +361,8 @@ namespace eTickets.Data
                 {
                     var newAdminUser = new ApplicationUser()
                     {
-                        FullName = "Admin User",
+                        Name = "Admin",
+                        Surname = "User",
                         UserName = "admin-user",
                         Email = adminUserEmail,
                         EmailConfirmed = true
@@ -379,7 +380,8 @@ namespace eTickets.Data
                 {
                     var newAppUser = new ApplicationUser()
                     {
-                        FullName = "Application User",
+                        Name = "Application",
+                        Surname = "User",
                         UserName = "app-user",
                         Email = appUserEmail,
                         EmailConfirmed = true

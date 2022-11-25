@@ -49,17 +49,17 @@ namespace eTickets.Controllers
                 if (passwordCheck)
                 {
                     var result = await _signInManager.PasswordSignInAsync(user, loginVM.Password, false, false);
-                    
+
                     if (result.Succeeded)
                         return RedirectToAction("Index", "Movies");
-                    
+
                 }
 
                 TempData["Error"] = "Wrong credentials. Please, try again!";
                 return View(loginVM);
             }
-            
-            TempData["Error"] = "Wrong credentials. Please, try again!";
+
+            TempData["Error"] = "There is no user with this email. Please, sign up!";
             return View(loginVM);
         }
 
@@ -74,7 +74,7 @@ namespace eTickets.Controllers
 
             var user = await _userManager.FindByEmailAsync(registerVM.EmailAddress);
 
-            if(user != null)
+            if (user != null)
             {
                 TempData["Error"] = "This email address is already in use!";
                 return View(registerVM);
@@ -82,7 +82,8 @@ namespace eTickets.Controllers
 
             var newUser = new ApplicationUser()
             {
-                FullName = registerVM.FullName,
+                Surname = registerVM.Surname,
+                Name = registerVM.Name,
                 Email = registerVM.EmailAddress,
                 UserName = registerVM.EmailAddress
             };
@@ -94,7 +95,7 @@ namespace eTickets.Controllers
                 await _userManager.AddToRoleAsync(newUser, UserRoles.User);
                 return View("RegisterCompleted");
             }
-            
+
             ViewBag.Errors = newUserResponse.Errors;
 
             return View(registerVM);
@@ -107,7 +108,6 @@ namespace eTickets.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index", "Movies");
         }
-
 
         public IActionResult AccessDenied()
         {

@@ -19,7 +19,7 @@ namespace eTickets.Models
 
         [Display(Name = "Name")]
         [Required(ErrorMessage = "Name is required")]
-        [StringLength(20, MinimumLength = 3, ErrorMessage = "Name must be between 3 and 20 chars")]
+        [StringLength(20, MinimumLength = 1, ErrorMessage = "Name must be between 1 and 20 chars")]
         public string Name { get; set; }
 
 

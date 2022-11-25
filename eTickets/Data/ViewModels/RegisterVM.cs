@@ -8,9 +8,18 @@ namespace eTickets.Data.ViewModels
 {
     public class RegisterVM
     {
-        [Display(Name = "Full Name")]
-        [Required(ErrorMessage = "Full Name is required")]
-        public string FullName { get; set; }
+
+        [Display(Name = "Name")]
+        [Required(ErrorMessage = "Name is required")]
+        [StringLength(20, MinimumLength = 3, ErrorMessage = "Name must be between 3 and 20 chars")]
+        public string Name { get; set; }
+
+
+        [Display(Name = "Surname")]
+        [Required(ErrorMessage = "Surname is required")]
+        [StringLength(25, MinimumLength = 1, ErrorMessage = "Surname must be between 1 and 25 chars")]
+        public string Surname { get; set; }
+
 
         [Display(Name = "Email address")]
         [Required(ErrorMessage = "Email address is required")]

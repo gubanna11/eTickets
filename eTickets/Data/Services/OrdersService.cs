@@ -25,12 +25,11 @@ namespace eTickets.Data.Services
             return orders;
         }
 
-        public async Task StoreOrderAsync(List<ShoppingCartItem> items, string userId, string userEmailAddress)
+        public async Task StoreOrderAsync(List<ShoppingCartItem> items, string userId)
         {
             var order = new Order()
             {
-                UserId = userId,
-                Email = userEmailAddress
+                UserId = userId
             };
 
             await _context.Orders.AddAsync(order);

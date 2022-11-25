@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace eTickets.Controllers
 {
-    //[Authorize]
+    [Authorize]
     public class OrdersController : Controller
     {
         private readonly IMoviesService _moviesService;
@@ -83,10 +83,10 @@ namespace eTickets.Controllers
             if (items.Count == 0)
                 return View("OrderCompleted");
 
-            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier); ;
-            string userEmailAddress = User.FindFirstValue(ClaimTypes.Email); ;
+            string userId = User.FindFirstValue(ClaimTypes.NameIdentifier); 
+            //string userEmailAddress = User.FindFirstValue(ClaimTypes.Email); 
 
-            await _ordersService.StoreOrderAsync(items, userId, userEmailAddress);
+            await _ordersService.StoreOrderAsync(items, userId);
 
             await _shoppingCart.ClearShoppingCartAsync();
 

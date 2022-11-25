@@ -16,6 +16,7 @@ namespace eTickets.Models
 
         [Display(Name = "Movie name")]
         [Required(ErrorMessage = "Name is required")]
+        [StringLength(200, MinimumLength = 2, ErrorMessage = "Name must be between 2 and 200 chars")]
         public string Name { get; set; }
 
         [Display(Name = "Movie description")]
