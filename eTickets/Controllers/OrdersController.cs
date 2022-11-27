@@ -59,7 +59,10 @@ namespace eTickets.Controllers
 
             if (item != null)
             {
-                _shoppingCart.AddItemToCart(item);
+                if (DateTime.Now > item.EndDate)
+                    return RedirectToAction("AccessDenied", "Account");
+                else
+                    _shoppingCart.AddItemToCart(item);
             }
             return RedirectToAction(nameof(ShoppingCart));
         }
