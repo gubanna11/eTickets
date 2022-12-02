@@ -66,8 +66,8 @@ namespace eTickets.Controllers
             var movieDropdownsData = await _service.GetNewMovieDropdownsValues();
 
             ViewBag.Cinemas = new SelectList(movieDropdownsData.Cinemas, "Id", "Name");
-            ViewBag.Producers = new SelectList(movieDropdownsData.Producers, "Id", "FullName");
-            ViewBag.Actors = new SelectList(movieDropdownsData.Actors, "Id", "FullName");
+            ViewBag.Producers = new SelectList(movieDropdownsData.Producers, "Id", "Surname");
+            ViewBag.Actors = new SelectList(movieDropdownsData.Actors, "Id", "Surname");
 
 
             return View();
@@ -82,8 +82,8 @@ namespace eTickets.Controllers
                 var movieDropdownsData = await _service.GetNewMovieDropdownsValues();
 
                 ViewBag.Cinemas = new SelectList(movieDropdownsData.Cinemas, "Id", "Name");
-                ViewBag.Producers = new SelectList(movieDropdownsData.Producers, "Id", "FullName");
-                ViewBag.Actors = new SelectList(movieDropdownsData.Actors, "Id", "FullName");
+                ViewBag.Producers = new SelectList(movieDropdownsData.Producers, "Id", "Surname");
+                ViewBag.Actors = new SelectList(movieDropdownsData.Actors, "Id", "Surname");
 
                 return View(movie);
             };
@@ -137,8 +137,8 @@ namespace eTickets.Controllers
                 var movieDropdownsData = await _service.GetNewMovieDropdownsValues();
 
                 ViewBag.Cinemas = new SelectList(movieDropdownsData.Cinemas, "Id", "Name");
-                ViewBag.Producers = new SelectList(movieDropdownsData.Producers, "Id", "FullName");
-                ViewBag.Actors = new SelectList(movieDropdownsData.Actors, "Id", "FullName");
+                ViewBag.Producers = new SelectList(movieDropdownsData.Producers, "Id", "Surname");
+                ViewBag.Actors = new SelectList(movieDropdownsData.Actors, "Id", "Surname");
 
                 return View(movie);
             };

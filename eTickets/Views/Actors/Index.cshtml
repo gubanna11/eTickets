@@ -13,8 +13,9 @@
                 <tr class="text-center">
                     <th>@Html.DisplayNameFor(model => model.ProfilePictureURL)</th>
                     <th>
-                        @Html.DisplayNameFor(model => model.Name)
-                        @Html.DisplayNameFor(model => model.Surname)
+                        Full Name
+                        @*@Html.DisplayNameFor(model => model.Name)
+                        @Html.DisplayNameFor(model => model.Surname)*@
                     </th>
                     <th>@Html.DisplayNameFor(model => model.Bio)</th>
                     @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
