@@ -36,15 +36,16 @@ namespace eTickets.Data.Services
             await _context.SaveChangesAsync();
 
             //Add Movie Actors
-            foreach (var actorId in data.ActorIds)
-            {
-                var newActorMovie = new Actor_Movie()
+            if (data.ActorIds != null)
+                foreach (var actorId in data.ActorIds)
                 {
-                    MovieId = newMovie.Id,
-                    ActorId = actorId
-                };
-                await _context.Actors_Movies.AddAsync(newActorMovie);
-            }
+                    var newActorMovie = new Actor_Movie()
+                    {
+                        MovieId = newMovie.Id,
+                        ActorId = actorId
+                    };
+                    await _context.Actors_Movies.AddAsync(newActorMovie);
+                }
             await _context.SaveChangesAsync();
         }
 
@@ -86,7 +87,7 @@ namespace eTickets.Data.Services
                 dbMovie.EndDate = data.EndDate;
                 dbMovie.MovieCategory = data.MovieCategory;
                 dbMovie.ProducerId = data.ProducerId;
-                
+
                 await _context.SaveChangesAsync();
             }
 
@@ -96,16 +97,19 @@ namespace eTickets.Data.Services
             await _context.SaveChangesAsync();
 
             //Add Movie Actors
-            foreach (var actorId in data.ActorIds)
+            if (data.ActorIds != null)
             {
-                var newActorMovie = new Actor_Movie()
+                foreach (var actorId in data.ActorIds)
                 {
-                    MovieId = data.Id,
-                    ActorId = actorId
-                };
-                await _context.Actors_Movies.AddAsync(newActorMovie);
+                    var newActorMovie = new Actor_Movie()
+                    {
+                        MovieId = data.Id,
+                        ActorId = actorId
+                    };
+                    await _context.Actors_Movies.AddAsync(newActorMovie);
+                }
+                await _context.SaveChangesAsync();
             }
-            await _context.SaveChangesAsync();
         }
     }
 }

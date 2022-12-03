@@ -46,6 +46,7 @@ namespace eTickets.Data.Services
                 };
                 await _context.OrderItems.AddAsync(orderItem);
             }
+            order.Total = items.Select(i => i.Movie.Price * i.Amount).Sum();
             await _context.SaveChangesAsync();
         }
     }

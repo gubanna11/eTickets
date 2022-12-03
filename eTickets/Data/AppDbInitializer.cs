@@ -90,7 +90,7 @@ namespace eTickets.Data
                         new Actor()
                         {
                             Name = "Actor",
-                            Surname = "3",
+                            Surname = "Surname4",
                             Bio = "This is the Bio of the second actor",
                             ProfilePictureURL = "http://dotnethow.net/images/actors/actor-4.jpeg"
                         },
@@ -128,7 +128,7 @@ namespace eTickets.Data
                         new Producer()
                         {
                             Name = "Producer",
-                            Surname = "3",
+                            Surname = "Surname4",
                             Bio = "This is the Bio of the second actor",
                             ProfilePictureURL = "http://dotnethow.net/images/producers/producer-3.jpeg"
                         },

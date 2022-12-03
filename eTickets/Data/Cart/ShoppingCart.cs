@@ -26,7 +26,7 @@ namespace eTickets.Data.Cart
 
             string cartId = session.GetString("CartId") ?? Guid.NewGuid().ToString();
             session.SetString("CartId", cartId);
-
+            
             return new ShoppingCart(context) { ShoppingCartId = cartId };
         }
 

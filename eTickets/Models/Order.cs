@@ -18,6 +18,7 @@ namespace eTickets.Models
         [ForeignKey(nameof(UserId))]
         public ApplicationUser User { get; set; }
 
+        public double Total { get; set; }
 
         public List<OrderItem> OrderItems { get; set; }
     }

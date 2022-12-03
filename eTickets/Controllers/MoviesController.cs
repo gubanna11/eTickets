@@ -115,7 +115,7 @@ namespace eTickets.Controllers
                 StartDate = movieDetails.StartDate,
                 EndDate = movieDetails.EndDate
             };
-
+            
             var movieDropdownsData = await _service.GetNewMovieDropdownsValues();
             
             ViewBag.Cinemas = new SelectList(movieDropdownsData.Cinemas, "Id", "Name");
