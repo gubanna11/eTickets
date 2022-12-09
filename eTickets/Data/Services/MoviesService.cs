@@ -2,8 +2,6 @@
 using eTickets.Data.ViewModels;
 using eTickets.Models;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -37,6 +35,7 @@ namespace eTickets.Data.Services
 
             //Add Movie Actors
             if (data.ActorIds != null)
+            {
                 foreach (var actorId in data.ActorIds)
                 {
                     var newActorMovie = new Actor_Movie()
@@ -46,7 +45,8 @@ namespace eTickets.Data.Services
                     };
                     await _context.Actors_Movies.AddAsync(newActorMovie);
                 }
-            await _context.SaveChangesAsync();
+                await _context.SaveChangesAsync();
+            }
         }
 
         public async Task<Movie> GetMovieByIdAsync(int id)

@@ -1,12 +1,9 @@
 ﻿@model IEnumerable<Producer>
-@* Define ViewData *@
 
 @{
     ViewData["Title"] = "List of Producers";
 
 }
-
-@* Write code *@
 
 <div class="row">
     <div class="col-md-8 offset-md-2">
@@ -16,8 +13,6 @@
                     <th>@Html.DisplayNameFor(model => model.ProfilePictureURL)</th>
                     <th>
                         Full Name
-                        @*@Html.DisplayNameFor(model => model.Name)
-                        @Html.DisplayNameFor(model => model.Surname)*@
                     </th>
                     <th>@Html.DisplayNameFor(model => model.Bio)</th>
                     @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
