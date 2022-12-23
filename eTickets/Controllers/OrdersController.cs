@@ -82,7 +82,7 @@ namespace eTickets.Controllers
 
             if (items.Count == 0)
                 return View("OrderCompleted");
-
+            
             string userId = User.FindFirstValue(ClaimTypes.NameIdentifier); 
             //string userEmailAddress = User.FindFirstValue(ClaimTypes.Email); 
 

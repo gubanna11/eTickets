@@ -36,7 +36,7 @@ namespace eTickets.Controllers
         {
             if (!ModelState.IsValid)
                 return View(loginVM);
-
+            
             var user = await _userManager.FindByEmailAsync(loginVM.EmailAddress);
 
             if (user != null)
@@ -45,7 +45,7 @@ namespace eTickets.Controllers
 
                 if (passwordCheck)
                 {
-                    var result = await _signInManager.PasswordSignInAsync(user, loginVM.Password, false, false);
+                    var result = await _signInManager.PasswordSignInAsync(user, loginVM.Password, true, false);
 
                     if (result.Succeeded)
                         return RedirectToAction("Index", "Movies");
@@ -94,7 +94,7 @@ namespace eTickets.Controllers
             }
 
             ViewBag.Errors = newUserResponse.Errors;
-
+            
             return View(registerVM);
         }
 

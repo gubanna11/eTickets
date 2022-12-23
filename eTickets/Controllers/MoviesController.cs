@@ -66,7 +66,6 @@ namespace eTickets.Controllers
             ViewBag.Producers = new SelectList(movieDropdownsData.Producers, "Id", "Surname");
             ViewBag.Actors = new SelectList(movieDropdownsData.Actors, "Id", "Surname");
 
-
             return View();
         }
 
@@ -118,7 +117,6 @@ namespace eTickets.Controllers
             ViewBag.Cinemas = new SelectList(movieDropdownsData.Cinemas, "Id", "Name");
             ViewBag.Producers = new SelectList(movieDropdownsData.Producers, "Id", "Surname");
             ViewBag.Actors = new SelectList(movieDropdownsData.Actors, "Id", "Surname");
-
 
             return View(response);
         }
